@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+	
+	<bean id="emp1" class="com.cts.model.Emp">
+		<property name="empid" value="2210"/>
+		<property name="empname" value="priya"/>
+	</bean>
+	<bean id="emp2" class="com.cts.model.Emp">
+		<property name="empid" value="2211"/>
+		<property name="empname" value="Ram"/>
+	</bean>
+	
+	<bean id="empcollection" class="com.cts.model.EmpCollection">
+		<property name="list">
+			<list>
+				<ref bean="emp1"/>
+				<ref bean="emp2"/>
+			</list>
+		</property>
+	<property name="set">
+			<set>
+				<ref bean="emp1"/>
+				<ref bean="emp2"/>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+			<entry key="1" value-ref="emp1"></entry>
+			<entry key="2" value-ref="emp2"></entry>
+			</map>
+		</property>
+		
+		<property name="prop">
+			<props>
+			<prop key="empid">1001</prop>
+			<prop key="empname">Sherine</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+</beans>
+
